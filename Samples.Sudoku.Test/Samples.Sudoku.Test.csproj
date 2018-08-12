@@ -115,7 +115,6 @@
   <ItemGroup>
     <Compile Include="BoardSampleData.cs" />
     <Compile Include="BoardReaderWriterIntegrationTests.cs" />
-    <Compile Include="StreamManagerTest.cs" />
     <Compile Include="BoardStreamRepositoryTest.cs" />
     <Compile Include="BoardTest.cs" />
     <Compile Include="InitializeTests.cs" />
