@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Samples.Sudoku</name>
+    </assembly>
+    <members>
+        <member name="T:Samples.Sudoku.AccessMode">
+            <summary>
+            Access mode for accessing board storage
+            </summary>
+        </member>
+        <member name="F:Samples.Sudoku.AccessMode.Read">
+            <summary>
+            Open storage for reading boards
+            </summary>
+        </member>
+        <member name="F:Samples.Sudoku.AccessMode.Write">
+            <summary>
+            Open storage for writing boards
+            </summary>
+        </member>
+        <member name="T:Samples.Sudoku.Board">
+            <summary>
+            Represents a Sudoku board
+            </summary>
+        </member>
+        <member name="F:Samples.Sudoku.Board.contentLock">
+            <summary>
+            Semaphore used to protect access to board data (<see cref="F:Samples.Sudoku.Board.content"/>).
+            </summary>
+        </member>
+        <member name="F:Samples.Sudoku.Board.content">
+            <summary>
+            Board data.
+            </summary>
+        </member>
+        <member name="F:Samples.Sudoku.Board.rows">
+            <summary>
+            Helper objects used to access the rows of the Sudoku board.
+            </summary>
+        </member>
+        <member name="F:Samples.Sudoku.Board.disposed">
+            <summary>
+            Value indicating whether the object has been disposed.
+            </summary>
+        </member>
+        <member name="M:Samples.Sudoku.Board.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Samples.Sudoku.Board"/> class.
+            </summary>
+        </member>
+        <member name="M:Samples.Sudoku.Board.op_Explicit(System.Byte[])~Samples.Sudoku.Board">
+            <summary>
+            Type cast from bytes to <see cref="T:Samples.Sudoku.Board"/> instance.
+            </summary>
+            <param name="source">Source byte array containing board data.</param>
+            <returns>New <see cref="T:Samples.Sudoku.Board"/> instance.</returns>
+            <remarks>
+            Note the use of unit test as a code sample.
+            </remarks>
+            <example>
+            <code source="../Samples.Sudoku.Test/BoardTest.cs" region="Example for type cast operators"
+            	language="C#" />
+            </example>
+            <seealso cref="M:Samples.Sudoku.Board.FromBytes(System.Byte[])"/>
+        </member>
+        <member name="M:Samples.Sudoku.Board.op_Explicit(Samples.Sudoku.Board)~System.Byte[]">
+            <summary>
+            Type cast from <see cref="T:Samples.Sudoku.Board"/> instance to bytes.
+            </summary>
+            <param name="source">Source board.</param>
+            <returns>Board data as a byte array.</returns>
+            <example>
+            <code source="../Samples.Sudoku.Test/BoardTest.cs" region="Example for type cast operators"
+            	language="C#" />
+            </example>
+            <seealso cref="M:Samples.Sudoku.Board.ToBytes(Samples.Sudoku.Board)"/>
+        </member>
+        <member name="M:Samples.Sudoku.Board.FromBytes(System.Byte[])">
+            <summary>
+            Converts board bytes to <see cref="T:Samples.Sudoku.Board"/> instance.
+            </summary>
+            <param name="source">Source byte array containing board data.</param>
+            <returns>New <see cref="T:Samples.Sudoku.Board"/> instance.</returns>
+            <remarks>
+            It is best practice to offer a FromXXX and ToXXX method if you create
+            type cast operators. Note that if you forget, Visual Studio Code Analysis will warn you.
+            You see, code analysis is a very good thing.
+            </remarks>
+        </member>
+        <member name="M:Samples.Sudoku.Board.ToBytes(Samples.Sudoku.Board)">
+            <summary>
+            Converts <see cref="T:Samples.Sudoku.Board"/> instance to bytes.
+            </summary>
+            <param name="source">Source board.</param>
+            <returns>Board data as a byte array.</returns>
+        </member>
+        <member name="M:Samples.Sudoku.Board.TrySetCell(System.Int32,System.Int32,System.Byte)">
+            <summary>
+            Tries the set the value of a cell.
+            </summary>
+            <param name="zeroBasedRowIndex">Index of the row.</param>
+            <param name="zeroBasedColumnIndex">Index of the column.</param>
+            <param name="value">The new value.</param>
+            <returns><c>True</c> if the value could be set successfully, otherwise <c>false</c>.</returns>
+            <remarks>
+            <para>
+            Note that <paramref name="value"/> must not be zero. If you want to unset a cell,
+            use <see cref="M:Samples.Sudoku.Board.ResetCell(System.Int32,System.Int32)"/> instead.
+            </para>
+            <para>
+            Note the TryXXX naming pattern. <see cref="M:Samples.Sudoku.Board.TrySetCell(System.Int32,System.Int32,System.Byte)"/> does the same as <see cref="M:Samples.Sudoku.Board.SetCell(System.Int32,System.Int32,System.Byte)"/>
+            except that it does not throw an exception if the value could not be set.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Samples.Sudoku.Board.SetCell(System.Int32,System.Int32,System.Byte)">
+            <summary>
+            Sets the value of a cell.
+            </summary>
+            <param name="zeroBasedRowIndex">Index of the row.</param>
+            <param name="zeroBasedColumnIndex">Index of the column.</param>
+            <param name="value">The new value.</param>
+            <exception cref="T:Samples.Sudoku.BoardException">Thrown if value could not be set.</exception>
+            <remarks>
+            <para>
+            Note that <paramref name="value"/> must not be zero. If you want to unset a cell,
+            use <see cref="M:Samples.Sudoku.Board.ResetCell(System.Int32,System.Int32)"/> instead.
+            </para>
+            <para>
+            Note the TryXXX naming pattern. <see cref="M:Samples.Sudoku.Board.TrySetCell(System.Int32,System.Int32,System.Byte)"/> does the same as <see cref="M:Samples.Sudoku.Board.SetCell(System.Int32,System.Int32,System.Byte)"/>
+            except that it does not throw an exception if the value could not be set.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Samples.Sudoku.Board.GetCell(System.Int32,System.Int32)">
+            <summary>
+            Gets the value of a cell.
+            </summary>
+            <param name="zeroBasedRowIndex">Index of the row.</param>
+            <param name="zeroBasedColumnIndex">Index of the column.</param>
+            <returns>Value of the cell at the specified row and column index.</returns>
+            <remarks>
+            Zero is returned for an unset cell.
+            </remarks>
+        </member>
+        <member name="M:Samples.Sudoku.Board.ResetCell(System.Int32,System.Int32)">
+            <summary>
+            Resets a cell's value to unset.
+            </summary>
+            <param name="zeroBasedRowIndex">Index of the row.</param>
+            <param name="zeroBasedColumnIndex">Index of the column.</param>
+        </member>
+        <member name="M:Samples.Sudoku.Board.TrySetCellInternal(System.Byte[],System.Int32,System.Int32,System.Byte)">
+            <summary>
+            Internal implementation for setting a cell's value.
+            </summary>
+        </member>
+        <member name="P:Samples.Sudoku.Board.Rows">
+            <summary>
+            Gets the rows of the board.
+            </summary>
+            <value>
+            The rows or the board.
+            </value>
+        </member>
+        <member name="P:Samples.Sudoku.Board.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:Samples.Sudoku.BoardRow"/> with the specified zero based row index.
+            </summary>
+            <value>
+            The <see cref="T:Samples.Sudoku.BoardRow"/> at index <paramref name="zeroBasedRowIndex"/>.
+            </value>
+            <param name="zeroBasedRowIndex">Index of the row.</param>
+        </member>
+        <member name="M:Samples.Sudoku.Board.GetCopyOfRow(System.Int32)">
+            <summary>
+            Gets a copy of a row as a byte array.
+            </summary>
+            <param name="zeroBasedRowIndex">Index of the row.</param>
+            <returns>Bytes of the specified row.</returns>
+        </member>
+        <member name="M:Samples.Sudoku.Board.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:Samples.Sudoku.Board"/> class.
+            </summary>
+        </member>
+        <member name="M:Samples.Sudoku.Board.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="P:Samples.Sudoku.Board.IsDisposed">
+            <summary>
+            Gets a value indicating whether object is disposed.
+            </summary>
+            <value>
+              <c>true</c> if object is disposed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Samples.Sudoku.Board.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposeObject"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="T:Samples.Sudoku.BoardException">
+            <summary>
+            Represents an exception that can happen when accessing a Sudoku board.
+            </summary>
+        </member>
+        <member name="M:Samples.Sudoku.BoardException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Samples.Sudoku.BoardException"/> class.
+            </summary>
+        </member>
+        <member name="M:Samples.Sudoku.BoardException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Samples.Sudoku.BoardException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:Samples.Sudoku.BoardException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Samples.Sudoku.BoardReader">
+            <summary>
+            Implements helper methods to load board data.
+            </summary>
+        </member>
+        <member name="M:Samples.Sudoku.BoardReader.LoadFromFileAsync(System.String,System.String)">
+            <summary>
+            Loads board from file asynchronously.
+            </summary>
+            <param name="boardName">Name of the board.</param>
+            <param name="boardsDirectory">Optional name of the directory where board files are stored.</param>
+            <returns>
+            A task that represents the asynchronous operation. The value of the 
+            TResult parameter contains the loaded board.
+            </returns>
+        </member>
+        <member name="M:Samples.Sudoku.BoardReader.LoadFromBlobStorageAsync(System.String,System.String,System.String,System.String)">
+            <summary>
+            Loads board from Azure Blob Storage asynchronously.
+            </summary>
+            <param name="accountName">Name of the Windows Azure Storage account.</param>
+            <param name="accountKey">Key for the Windows Azure Storaeg account.</param>
+            <param name="containerName">Container in which boards are stored.</param>
+            <param name="boardName">Name of the board.</param>
+            <returns>
+            A task that represents the asynchronous operation. The value of the 
+            TResult parameter contains the loaded board.
+            </returns>
+        </member>
+        <member name="T:Samples.Sudoku.BoardStreamRepository">
+            <summary>
+            Contains methods to read/write <see cref="T:Samples.Sudoku.Board"/> instances from/to a <see cref="T:System.IO.Stream"/>.
+            </summary>
+        </member>
+        <member name="M:Samples.Sudoku.BoardStreamRepository.#ctor(Samples.Sudoku.IStreamManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Samples.Sudoku.BoardStreamRepository"/> class.
+            </summary>
+            <param name="streamManager">Underlying stream manager.</param>
+        </member>
+        <member name="M:Samples.Sudoku.BoardStreamRepository.SaveAsync(System.String,Samples.Sudoku.Board)">
+            <summary>
+            Saves the board using the specified name
+            </summary>
+            <param name="boardName">Name of the board.</param>
+            <param name="board">The board to save.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Samples.Sudoku.BoardStreamRepository.LoadAsync(System.String)">
+            <summary>
+            Loads the board using the specified name
+            </summary>
+            <param name="boardName">Name of the board to load.</param>
+            <returns>
+            A task that represents the asynchronous operation. The value of the 
+            TResult parameter contains the loaded board.
+            </returns>
+        </member>
+        <member name="T:Samples.Sudoku.BoardRow">
+            <summary>
+            Represents a row of a board.
+            </summary>
+            <seealso cref="T:Samples.Sudoku.Board"/>
+        </member>
+        <member name="P:Samples.Sudoku.BoardRow.Item(System.Int32)">
+            <summary>
+            Gets or sets the value of the cell at the specified column index.
+            </summary>
+            <value>
+            The value of the cell.
+            </value>
+            <param name="zeroBasedColumnIndex">Index of the column.</param>
+        </member>
+        <member name="M:Samples.Sudoku.BoardRow.op_Implicit(Samples.Sudoku.BoardRow)~System.Byte[]">
+            <summary>
+            Type cast from <see cref="T:Samples.Sudoku.BoardRow"/> instance to bytes.
+            </summary>
+            <param name="row">Source board row.</param>
+            <returns>Board row data as a byte array.</returns>
+            <seealso cref="M:Samples.Sudoku.BoardRow.ToBytes"/>
+        </member>
+        <member name="M:Samples.Sudoku.BoardRow.ToBytes">
+            <summary>
+            Converts <see cref="T:Samples.Sudoku.BoardRow"/> instance to bytes.
+            </summary>
+            <returns>Board row data as a byte array.</returns>
+        </member>
+        <member name="M:Samples.Sudoku.BoardRow.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Samples.Sudoku.BoardRow.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="T:Samples.Sudoku.ContractExtensions">
+            <summary>
+            Contains helper methods for commonly used release contracts.
+            </summary>
+        </member>
+        <member name="T:Samples.Sudoku.CloudBlobStreamManager">
+            <summary>
+            Stream manager implementation for Windows Azure Blob Storage.
+            </summary>
+        </member>
+        <member name="M:Samples.Sudoku.CloudBlobStreamManager.#ctor(Microsoft.WindowsAzure.Storage.Blob.CloudBlobContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Samples.Sudoku.CloudBlobStreamManager"/> class.
+            </summary>
+            <param name="container">The container in which the boards should be stored.</param>
+        </member>
+        <member name="M:Samples.Sudoku.CloudBlobStreamManager.OpenStreamAsync(System.String,Samples.Sudoku.AccessMode)">
+            <inheritdoc />
+        </member>
+        <member name="T:Samples.Sudoku.FileStreamManager">
+            <summary>
+            Stream manager implementation for local files.
+            </summary>
+        </member>
+        <member name="M:Samples.Sudoku.FileStreamManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Samples.Sudoku.FileStreamManager"/> class.
+            </summary>
+            <remarks>
+            Boards will be stored in the subdirectory "Boards" in the roaming application data
+            directory.
+            </remarks>
+        </member>
+        <member name="M:Samples.Sudoku.FileStreamManager.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Samples.Sudoku.FileStreamManager"/> class.
+            </summary>
+            <param name="boardsDirectory">Directory where the boards should be stored.</param>
+        </member>
+        <member name="M:Samples.Sudoku.FileStreamManager.OpenStreamAsync(System.String,Samples.Sudoku.AccessMode)">
+            <inheritdoc />
+        </member>
+        <member name="T:Samples.Sudoku.IStreamManager">
+            <summary>
+            Contains methods to manage a stream for reading/writing board data.
+            </summary>
+        </member>
+        <member name="M:Samples.Sudoku.IStreamManager.OpenStreamAsync(System.String,Samples.Sudoku.AccessMode)">
+            <summary>
+            Opens the stream asynchronously.
+            </summary>
+            <param name="boardName">Name of the board to access.</param>
+            <param name="accessMode">The <see cref="T:Samples.Sudoku.AccessMode"/>.</param>
+            <returns>
+            A task that represents the asynchronous operation. The value of the 
+            TResult parameter contains the resulting stream.
+            </returns>
+            <remarks>
+            Note that the caller is responsible for disposing the returned stream when
+            it is no longer needed.
+            </remarks>
+        </member>
+        <member name="T:Samples.Sudoku.NamespaceDoc">
+            <summary>
+            Implementation of a Sudoku board.
+            </summary>
+        </member>
+    </members>
+</doc>

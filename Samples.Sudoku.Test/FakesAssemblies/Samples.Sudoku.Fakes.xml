@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Samples.Sudoku.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Samples.Sudoku.Fakes.StubIStreamManager">
+            <summary>Stub type of Samples.Sudoku.IStreamManager</summary>
+        </member>
+        <member name="M:Samples.Sudoku.Fakes.StubIStreamManager.#ctor">
+            <summary>Initializes a new instance of type StubIStreamManager</summary>
+        </member>
+        <member name="F:Samples.Sudoku.Fakes.StubIStreamManager.OpenStreamAsyncStringAccessMode">
+            <summary>Sets the stub of IStreamManager.OpenStreamAsync(String boardName, AccessMode accessMode)</summary>
+        </member>
+        <member name="M:Samples.Sudoku.Fakes.StubIStreamManager.Samples#Sudoku#IStreamManager#OpenStreamAsync(System.String,Samples.Sudoku.AccessMode)">
+            <summary>Sets the stub of IStreamManager.OpenStreamAsync(String boardName, AccessMode accessMode)</summary>
+        </member>
+    </members>
+</doc>

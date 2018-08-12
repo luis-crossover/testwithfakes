@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>mscorlib.4.0.0.0.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:System.Fakes.StubIAsyncResult">
+            <summary>Stub type of System.IAsyncResult</summary>
+        </member>
+        <member name="M:System.Fakes.StubIAsyncResult.#ctor">
+            <summary>Initializes a new instance of type StubIAsyncResult</summary>
+        </member>
+        <member name="P:System.Fakes.StubIAsyncResult.System#IAsyncResult#AsyncState">
+            <summary>Sets the stub of IAsyncResult.get_AsyncState()</summary>
+        </member>
+        <member name="F:System.Fakes.StubIAsyncResult.AsyncStateGet">
+            <summary>Sets the stub of IAsyncResult.get_AsyncState()</summary>
+        </member>
+        <member name="P:System.Fakes.StubIAsyncResult.System#IAsyncResult#AsyncWaitHandle">
+            <summary>Sets the stub of IAsyncResult.get_AsyncWaitHandle()</summary>
+        </member>
+        <member name="F:System.Fakes.StubIAsyncResult.AsyncWaitHandleGet">
+            <summary>Sets the stub of IAsyncResult.get_AsyncWaitHandle()</summary>
+        </member>
+        <member name="P:System.Fakes.StubIAsyncResult.System#IAsyncResult#CompletedSynchronously">
+            <summary>Sets the stub of IAsyncResult.get_CompletedSynchronously()</summary>
+        </member>
+        <member name="F:System.Fakes.StubIAsyncResult.CompletedSynchronouslyGet">
+            <summary>Sets the stub of IAsyncResult.get_CompletedSynchronously()</summary>
+        </member>
+        <member name="P:System.Fakes.StubIAsyncResult.System#IAsyncResult#IsCompleted">
+            <summary>Sets the stub of IAsyncResult.get_IsCompleted()</summary>
+        </member>
+        <member name="F:System.Fakes.StubIAsyncResult.IsCompletedGet">
+            <summary>Sets the stub of IAsyncResult.get_IsCompleted()</summary>
+        </member>
+        <member name="T:System.IO.Fakes.ShimFileStream">
+            <summary>Shim type of System.IO.FileStream</summary>
+        </member>
+        <member name="M:System.IO.Fakes.ShimFileStream.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.IO.Fakes.ShimFileStream.#ctor(System.IO.FileStream)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.IO.Fakes.ShimFileStream.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.BeginReadByteArrayInt32Int32AsyncCallbackObject">
+            <summary>Sets the shim of FileStream.BeginRead(Byte[] array, Int32 offset, Int32 numBytes, AsyncCallback userCallback, Object stateObject)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.BeginWriteByteArrayInt32Int32AsyncCallbackObject">
+            <summary>Sets the shim of FileStream.BeginWrite(Byte[] array, Int32 offset, Int32 numBytes, AsyncCallback userCallback, Object stateObject)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.CanReadGet">
+            <summary>Sets the shim of FileStream.get_CanRead()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.CanSeekGet">
+            <summary>Sets the shim of FileStream.get_CanSeek()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.CanWriteGet">
+            <summary>Sets the shim of FileStream.get_CanWrite()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of FileStream.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.EndReadIAsyncResult">
+            <summary>Sets the shim of FileStream.EndRead(IAsyncResult asyncResult)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.EndWriteIAsyncResult">
+            <summary>Sets the shim of FileStream.EndWrite(IAsyncResult asyncResult)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.Flush">
+            <summary>Sets the shim of FileStream.Flush()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.FlushAsyncCancellationToken">
+            <summary>Sets the shim of FileStream.FlushAsync(CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.FlushBoolean">
+            <summary>Sets the shim of FileStream.Flush(Boolean flushToDisk)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.FlushInternalBuffer">
+            <summary>Sets the shim of FileStream.FlushInternalBuffer()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.FlushOSBuffer">
+            <summary>Sets the shim of FileStream.FlushOSBuffer()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.FlushRead">
+            <summary>Sets the shim of FileStream.FlushRead()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.FlushWriteBoolean">
+            <summary>Sets the shim of FileStream.FlushWrite(Boolean calledFromFinalizer)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.HandleGet">
+            <summary>Sets the shim of FileStream.get_Handle()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.IsAsyncGet">
+            <summary>Sets the shim of FileStream.get_IsAsync()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.LengthGet">
+            <summary>Sets the shim of FileStream.get_Length()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.LockInt64Int64">
+            <summary>Sets the shim of FileStream.Lock(Int64 position, Int64 length)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.NameGet">
+            <summary>Sets the shim of FileStream.get_Name()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.NameInternalGet">
+            <summary>Sets the shim of FileStream.get_NameInternal()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.PositionGet">
+            <summary>Sets the shim of FileStream.get_Position()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.PositionSetInt64">
+            <summary>Sets the shim of FileStream.set_Position(Int64 value)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.ReadAsyncByteArrayInt32Int32CancellationToken">
+            <summary>Sets the shim of FileStream.ReadAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.ReadByte">
+            <summary>Sets the shim of FileStream.ReadByte()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.ReadByteArrayInt32Int32">
+            <summary>Sets the shim of FileStream.Read(Byte[] array, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.ReadCoreByteArrayInt32Int32">
+            <summary>Sets the shim of FileStream.ReadCore(Byte[] buffer, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.SafeFileHandleGet">
+            <summary>Sets the shim of FileStream.get_SafeFileHandle()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.SeekCoreInt64SeekOrigin">
+            <summary>Sets the shim of FileStream.SeekCore(Int64 offset, SeekOrigin origin)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.SeekInt64SeekOrigin">
+            <summary>Sets the shim of FileStream.Seek(Int64 offset, SeekOrigin origin)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.SetLengthCoreInt64">
+            <summary>Sets the shim of FileStream.SetLengthCore(Int64 value)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.SetLengthInt64">
+            <summary>Sets the shim of FileStream.SetLength(Int64 value)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.UnlockInt64Int64">
+            <summary>Sets the shim of FileStream.Unlock(Int64 position, Int64 length)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.VerifyHandleIsSync">
+            <summary>Sets the shim of FileStream.VerifyHandleIsSync()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.VerifyOSHandlePosition">
+            <summary>Sets the shim of FileStream.VerifyOSHandlePosition()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.WriteAsyncByteArrayInt32Int32CancellationToken">
+            <summary>Sets the shim of FileStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.WriteByteArrayInt32Int32">
+            <summary>Sets the shim of FileStream.Write(Byte[] array, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.WriteByteByte">
+            <summary>Sets the shim of FileStream.WriteByte(Byte value)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.AllInstances.WriteCoreByteArrayInt32Int32">
+            <summary>Sets the shim of FileStream.WriteCore(Byte[] buffer, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.BeginReadByteArrayInt32Int32AsyncCallbackObject">
+            <summary>Sets the shim of FileStream.BeginRead(Byte[] array, Int32 offset, Int32 numBytes, AsyncCallback userCallback, Object stateObject)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.BeginWriteByteArrayInt32Int32AsyncCallbackObject">
+            <summary>Sets the shim of FileStream.BeginWrite(Byte[] array, Int32 offset, Int32 numBytes, AsyncCallback userCallback, Object stateObject)</summary>
+        </member>
+        <member name="M:System.IO.Fakes.ShimFileStream.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.IO.Fakes.ShimFileStream.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.IO.Fakes.ShimFileStream.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.CanReadGet">
+            <summary>Sets the shim of FileStream.get_CanRead()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.CanSeekGet">
+            <summary>Sets the shim of FileStream.get_CanSeek()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.CanWriteGet">
+            <summary>Sets the shim of FileStream.get_CanWrite()</summary>
+        </member>
+        <member name="M:System.IO.Fakes.ShimFileStream.CancelTaskOf1Object``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{System.Object})">
+            <summary>Sets the shim of FileStream.CancelTask(Object state)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.Constructor">
+            <summary>Sets the shim of FileStream.FileStream()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorIntPtrFileAccess">
+            <summary>Sets the shim of FileStream.FileStream(IntPtr handle, FileAccess access)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorIntPtrFileAccessBoolean">
+            <summary>Sets the shim of FileStream.FileStream(IntPtr handle, FileAccess access, Boolean ownsHandle)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorIntPtrFileAccessBooleanInt32">
+            <summary>Sets the shim of FileStream.FileStream(IntPtr handle, FileAccess access, Boolean ownsHandle, Int32 bufferSize)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorIntPtrFileAccessBooleanInt32Boolean">
+            <summary>Sets the shim of FileStream.FileStream(IntPtr handle, FileAccess access, Boolean ownsHandle, Int32 bufferSize, Boolean isAsync)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorSafeFileHandleFileAccess">
+            <summary>Sets the shim of FileStream.FileStream(SafeFileHandle handle, FileAccess access)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorSafeFileHandleFileAccessInt32">
+            <summary>Sets the shim of FileStream.FileStream(SafeFileHandle handle, FileAccess access, Int32 bufferSize)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorSafeFileHandleFileAccessInt32Boolean">
+            <summary>Sets the shim of FileStream.FileStream(SafeFileHandle handle, FileAccess access, Int32 bufferSize, Boolean isAsync)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorStringFileMode">
+            <summary>Sets the shim of FileStream.FileStream(String path, FileMode mode)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorStringFileModeFileAccess">
+            <summary>Sets the shim of FileStream.FileStream(String path, FileMode mode, FileAccess access)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorStringFileModeFileAccessFileShare">
+            <summary>Sets the shim of FileStream.FileStream(String path, FileMode mode, FileAccess access, FileShare share)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorStringFileModeFileAccessFileShareInt32">
+            <summary>Sets the shim of FileStream.FileStream(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorStringFileModeFileAccessFileShareInt32Boolean">
+            <summary>Sets the shim of FileStream.FileStream(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorStringFileModeFileAccessFileShareInt32FileOptions">
+            <summary>Sets the shim of FileStream.FileStream(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorStringFileModeFileAccessFileShareInt32FileOptionsStringBoolean">
+            <summary>Sets the shim of FileStream.FileStream(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorStringFileModeFileAccessFileShareInt32FileOptionsStringBooleanBoolean">
+            <summary>Sets the shim of FileStream.FileStream(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorStringFileModeFileAccessFileShareInt32FileOptionsStringBooleanBooleanBoolean">
+            <summary>Sets the shim of FileStream.FileStream(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ConstructorStringFileModeFileSystemRightsFileShareInt32FileOptions">
+            <summary>Sets the shim of FileStream.FileStream(String path, FileMode mode, FileSystemRights rights, FileShare share, Int32 bufferSize, FileOptions options)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.DisposeBoolean">
+            <summary>Sets the shim of FileStream.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.EndReadIAsyncResult">
+            <summary>Sets the shim of FileStream.EndRead(IAsyncResult asyncResult)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.EndReadTaskIAsyncResult">
+            <summary>Sets the shim of FileStream.EndReadTask(IAsyncResult iar)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.EndWriteIAsyncResult">
+            <summary>Sets the shim of FileStream.EndWrite(IAsyncResult asyncResult)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.EndWriteTaskIAsyncResult">
+            <summary>Sets the shim of FileStream.EndWriteTask(IAsyncResult iar)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.Flush">
+            <summary>Sets the shim of FileStream.Flush()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.FlushAsyncCancellationToken">
+            <summary>Sets the shim of FileStream.FlushAsync(CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.FlushBoolean">
+            <summary>Sets the shim of FileStream.Flush(Boolean flushToDisk)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.FlushInternalBuffer">
+            <summary>Sets the shim of FileStream.FlushInternalBuffer()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.FlushOSBuffer">
+            <summary>Sets the shim of FileStream.FlushOSBuffer()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.FlushRead">
+            <summary>Sets the shim of FileStream.FlushRead()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.FlushWriteBoolean">
+            <summary>Sets the shim of FileStream.FlushWrite(Boolean calledFromFinalizer)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.HandleGet">
+            <summary>Sets the shim of FileStream.get_Handle()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.IsAsyncGet">
+            <summary>Sets the shim of FileStream.get_IsAsync()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.LengthGet">
+            <summary>Sets the shim of FileStream.get_Length()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.LockInt64Int64">
+            <summary>Sets the shim of FileStream.Lock(Int64 position, Int64 length)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.NameGet">
+            <summary>Sets the shim of FileStream.get_Name()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.NameInternalGet">
+            <summary>Sets the shim of FileStream.get_NameInternal()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.PositionGet">
+            <summary>Sets the shim of FileStream.get_Position()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.PositionSetInt64">
+            <summary>Sets the shim of FileStream.set_Position(Int64 value)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ReadAsyncByteArrayInt32Int32CancellationToken">
+            <summary>Sets the shim of FileStream.ReadAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ReadByte">
+            <summary>Sets the shim of FileStream.ReadByte()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ReadByteArrayInt32Int32">
+            <summary>Sets the shim of FileStream.Read(Byte[] array, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.ReadCoreByteArrayInt32Int32">
+            <summary>Sets the shim of FileStream.ReadCore(Byte[] buffer, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.SafeFileHandleGet">
+            <summary>Sets the shim of FileStream.get_SafeFileHandle()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.SeekCoreInt64SeekOrigin">
+            <summary>Sets the shim of FileStream.SeekCore(Int64 offset, SeekOrigin origin)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.SeekInt64SeekOrigin">
+            <summary>Sets the shim of FileStream.Seek(Int64 offset, SeekOrigin origin)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.SetLengthCoreInt64">
+            <summary>Sets the shim of FileStream.SetLengthCore(Int64 value)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.SetLengthInt64">
+            <summary>Sets the shim of FileStream.SetLength(Int64 value)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.UnlockInt64Int64">
+            <summary>Sets the shim of FileStream.Unlock(Int64 position, Int64 length)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.VerifyHandleIsSync">
+            <summary>Sets the shim of FileStream.VerifyHandleIsSync()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.VerifyOSHandlePosition">
+            <summary>Sets the shim of FileStream.VerifyOSHandlePosition()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.WriteAsyncByteArrayInt32Int32CancellationToken">
+            <summary>Sets the shim of FileStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.WriteByteArrayInt32Int32">
+            <summary>Sets the shim of FileStream.Write(Byte[] array, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.WriteByteByte">
+            <summary>Sets the shim of FileStream.WriteByte(Byte value)</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimFileStream.WriteCoreByteArrayInt32Int32">
+            <summary>Sets the shim of FileStream.WriteCore(Byte[] buffer, Int32 offset, Int32 count)</summary>
+        </member>
+    </members>
+</doc>
