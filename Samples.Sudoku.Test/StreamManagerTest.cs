@@ -126,7 +126,34 @@
 			}
 		}
 
-		[TestMethod]
+        [TestMethod]
+        [TestCategory("With fakes")]
+        public async Task FileStreamManagerShimmedLoadTestFail()
+        {
+            using (ShimsContext.Create())
+            {
+                // Note how we use a shimmed constructor here.
+                ShimFileStream.ConstructorStringFileMode = (@this, fileName, __) =>
+                {
+                    Assert.IsTrue(fileName.EndsWith("\\AppData\\Roaming\\Boards\\" + dummyBoardName));
+                    new ShimFileStream(@this)
+                    {
+                        ReadAsyncByteArrayInt32Int32CancellationToken = (buffer, ___, ____, _____) =>
+                        {
+                            BoardSampleData.sampleBoard.CopyTo(buffer, 0);
+                            return Task.FromResult(BoardSampleData.sampleBoard.Length);
+                        }
+                    };
+                };
+
+                var repository = new BoardStreamRepository(new FileStreamManager());
+                var result = await repository.LoadAsync(dummyBoardName);
+
+                CollectionAssert.AreNotEqual(BoardSampleData.sampleBoard, (byte[])result);
+            }
+        }
+
+        [TestMethod]
 		[TestCategory("With fakes")]
 		public async Task CloudBlobShimmedWebRequestTest()
 		{
